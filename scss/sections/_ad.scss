@@ -1,0 +1,51 @@
+.ad {
+
+    padding: 6rem 0;
+    background-color: $BrightRed;
+    text-align: center;
+    position: relative;
+
+    &__container {
+        padding: 0 2rem;
+        position: relative;
+    }
+
+    &__title {
+        margin-bottom: 2rem;
+        color: #fff;
+
+    }
+
+    &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 100%;
+        width: 100px;
+        background: url('../../images/bg-simplify-section-mobile.svg') no-repeat right / cover;
+    }
+
+    @include breakpoint-up('desktop') {
+
+        &__container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        &__title {
+            flex-basis: 40%;
+            text-align: left;
+        }
+
+        &:before {
+            background: url('../../images/bg-simplify-section-desktop.svg') no-repeat left / cover;
+            left: unset;
+            right: 0;
+            width: 90%;
+            // z-index: ;
+        }
+    }
+}

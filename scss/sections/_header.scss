@@ -1,0 +1,128 @@
+.header {
+
+    text-align: center;
+    padding-bottom: 8rem;
+    padding-top: 4rem;
+    position: relative;
+
+
+    &__content {
+        padding: 0 1rem;
+    }
+
+    &__img-wrap {
+
+        position: relative;
+
+        &:after {
+            background: url('images/bg-tablet-pattern.svg') no-repeat 40% 100% / cover;
+            position: absolute;
+            z-index: -1;
+            left:0;
+            content:'';
+            bottom: 0;
+            width: 120%;
+            height: calc(100% + 94px);
+            // transform: scale(1.4);
+            transform: translate(10%, -15%);
+            
+        }
+    }
+
+    &__img {
+        position: relative;
+        width: 95%;
+        margin: auto;
+        display: block;
+    }
+
+    &__text {
+        padding-top: 1rem;
+    }
+
+    &__btn {
+        margin-top: 2rem;
+    }
+
+    &__title {
+        padding-top: 2rem;
+    }
+
+    &::after {
+        position: absolute;
+        content: '';
+        width: 250px;
+        height: 40%;
+        right: 0;
+        bottom: 0;
+        background: url('../../images/bg-tablet-pattern.svg') no-repeat 0% 20% / cover;
+        z-index: -1;
+    }
+
+    @include breakpoint-up('big-mobile') {
+
+        &__img-wrap {
+            height: 350px;
+        }
+
+        &__img {
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    @include breakpoint-up('desktop') {
+        
+        &::after {
+            display: none;
+        }
+        
+        &__container {
+            display: flex;
+            justify-content: space-between;
+            text-align: left;
+        }
+
+        &__img-wrap {
+            order: 2;
+            flex: 1 0 50%;
+            height: unset;
+            // flex: 0 50%;
+        }
+
+        &__img {
+            object-fit: cover;
+        }
+
+        &__content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: left;
+            padding: 0;
+            flex-basis: 45%;
+
+        }
+
+        &__text {
+            font-size: 1.1rem;
+            padding-top: 2rem;
+        }
+    }
+
+    @include breakpoint-up('big-desktop') {
+
+        &__content {
+            flex-basis: 40%;
+        }
+
+        &__img-wrap {
+            flex: 0 50%;
+            margin: 0;
+        }
+
+        &__img {
+            width: 100%;
+        }
+    }
+}

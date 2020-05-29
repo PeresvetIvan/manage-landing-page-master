@@ -1,0 +1,56 @@
+$hamburger-edge: 30px;
+
+.hamburger {
+    position: relative;
+    height: $hamburger-edge;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+    
+    
+    &__inner {
+        // transition: transform 0.2s ease;
+        // padding: 0.5rem;
+        z-index: -1;
+
+        span {
+            height: 4px;
+            width: $hamburger-edge;
+            background: #000;
+            display: block;
+            
+            &:not(:last-child) {
+                margin-bottom: 4px;
+            }
+        }
+    }
+
+    &:hover {
+
+        & .hamburger__inner {
+         
+            animation: hamburger-shrink 400ms cubic-bezier(0.560, 1.650, 0.750, 1.650) 1;
+            
+        }
+    }
+
+    @include breakpoint-up('tablet') {
+        display: none;
+    }
+}
+
+@keyframes hamburger-shrink {
+    40% {
+        transform: scale(0.9);
+    }
+    65% {
+        transform: scale(1.05);
+    }
+    80% {
+        transform: scale(0.95);
+    }
+    100% {
+        transform: scale(1);
+    }
+}

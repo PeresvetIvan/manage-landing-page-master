@@ -1,0 +1,61 @@
+.features {
+
+    padding-bottom: 4rem;
+    position: relative;
+
+    &__container {
+        padding: 0 2rem;
+    }
+
+    &__descr {
+        text-align: center;
+    }
+
+
+    &__text {
+        padding-top: 1rem;
+        margin-bottom: 4rem;
+    }
+
+    &__feature {
+
+        &:not(:last-child) {
+            margin-bottom: 3rem;
+        }
+    }
+
+    @include breakpoint-up('desktop') {
+
+        &__container {
+            display: flex;
+            // gap: 10%;
+            justify-content: space-between;
+        }
+
+        &__descr {
+            text-align: left;
+            flex-basis: 40%;
+        }
+
+        &__content {
+            flex-basis: 50%;
+        } 
+
+        &__text {
+            font-size: 1.1rem;
+            max-width: 80%;
+        }
+
+        &:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 20%;
+            height: 700px;
+            background: url('../../images/bg-tablet-pattern.svg') no-repeat top right / cover;
+            transform: translateY(65%);
+        }
+    }
+
+}

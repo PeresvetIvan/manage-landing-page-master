@@ -1,0 +1,29 @@
+*, *:before, *:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Be Vietnam', sans-serif;
+    font-size: 16px;
+    overflow-x: hidden;
+    font-weight: 400;
+}
+
+input, button, textarea {
+    border: none;
+    outline: none;
+    color: inherit;
+}
+
+a, a:active, a:focus {
+    color: inherit;
+    display: inline-block;
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+

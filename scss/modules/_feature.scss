@@ -1,0 +1,76 @@
+.feature {
+
+
+
+    &__content {
+        
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__number {
+        display: inline-block;
+        // width: 30px;
+        // line-height: ;
+        background-color: $BrightRed;
+        border-radius: 25px;
+        line-height: 2;
+        padding: 0 1.5rem 0.3rem;
+        color: #fff;
+        font-weight: 500;
+        font-size: 1.3rem;
+        margin-right: 1rem;
+        align-self: start;
+        
+    }
+
+
+    &__title {
+        
+        position: relative;
+        display: inline-block;
+        line-height: 2;
+        flex-grow: 1;
+        padding-bottom: 0.3rem;
+            margin-bottom: 1rem;
+
+
+        &:before {
+            position: absolute;
+            content: '';
+            right: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            background-color: $VeryPaleRed;
+            z-index: -1;
+            transform: translateX(10%) scaleX(1.4);
+        }
+
+    }
+
+    &__text {
+        line-height: 1.7;
+    }
+
+    @include breakpoint-up('desktop') {
+
+
+
+        &__title {
+
+            &::before {
+                display: none;
+            }
+        }
+
+        &__number {
+            margin-right: 2rem;
+        }
+
+        &__text {
+            
+            padding-left: calc(71.15px + 2rem);
+        }
+    }
+}

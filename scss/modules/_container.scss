@@ -1,0 +1,9 @@
+.container {
+    padding: 0 1rem;
+    margin: 0 auto;
+    max-width: $Big-Desktop;
+
+    @include breakpoint-up('desktop') {
+        padding: 0 2rem;
+    }
+}
